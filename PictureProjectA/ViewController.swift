@@ -9,7 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
 
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +23,29 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func loginButton(_ sender: UIButton) {
+        let un = usernameTextField.text
+        let pw = passwordTextField.text
+        
+        if((un!.isEmpty) || (pw!.isEmpty))
+        {
+            showMessage("Please enter missing value", "Error", self)
+        }
+        else
+        {
+            let username = UserDefaults.standard.string(forKey: "username")
+            let password = UserDefaults.standard.string(forKey: "password")
+            if(un == username && pw == password)
+            {
+                //showMessage("Welcome", "", self)
+            }
+            else
+            {
+                showMessage("Please enter correct login details", "Error", self)
+            }
+        }
+        
+    }
+    
 }
 
