@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14E061952125776D00CAD575 /* icons8-picture-24.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E061932125776C00CAD575 /* icons8-picture-24.png */; };
+		14E061962125776D00CAD575 /* icons8-screenshot-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E061942125776C00CAD575 /* icons8-screenshot-30.png */; };
 		3D0F43A4211FD7FF00184754 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0F43A3211FD7FF00184754 /* AppDelegate.swift */; };
 		3D0F43A6211FD7FF00184754 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0F43A5211FD7FF00184754 /* ViewController.swift */; };
 		3D0F43A9211FD7FF00184754 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D0F43A7211FD7FF00184754 /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14E061932125776C00CAD575 /* icons8-picture-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-picture-24.png"; path = "../../../Downloads/icons8-picture-24.png"; sourceTree = "<group>"; };
+		14E061942125776C00CAD575 /* icons8-screenshot-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-screenshot-30.png"; path = "../../../Downloads/icons8-screenshot-30.png"; sourceTree = "<group>"; };
 		3D0F43A0211FD7FF00184754 /* PictureProjectA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureProjectA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0F43A3211FD7FF00184754 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D0F43A5211FD7FF00184754 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				3D383669212258DC004AE9F2 /* HomeViewController.swift */,
 				3D0F43D1211FDDB200184754 /* RegistrationViewController.swift */,
 				3D0F43AA211FD80100184754 /* Assets.xcassets */,
+				14E061932125776C00CAD575 /* icons8-picture-24.png */,
+				14E061942125776C00CAD575 /* icons8-screenshot-30.png */,
 				3D0F43AC211FD80100184754 /* LaunchScreen.storyboard */,
 				3D0F43AF211FD80100184754 /* Info.plist */,
 			);
@@ -238,6 +244,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14E061952125776D00CAD575 /* icons8-picture-24.png in Resources */,
+				14E061962125776D00CAD575 /* icons8-screenshot-30.png in Resources */,
 				3D0F43AE211FD80100184754 /* LaunchScreen.storyboard in Resources */,
 				3D0F43AB211FD80100184754 /* Assets.xcassets in Resources */,
 				3D0F43A9211FD7FF00184754 /* Main.storyboard in Resources */,

@@ -15,8 +15,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //setupNavigationBarItems()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    //private func setupNavigationBarItems(){
+    //let nav = self.navigationController?.navigationBar
+    //   nav?.barStyle = UIBarStyle.black
+    //    nav?.tintColor = UIColor.yellow
+    //}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -46,6 +53,7 @@ class ViewController: UIViewController {
         }
         
     }
+    
     
 }
 
