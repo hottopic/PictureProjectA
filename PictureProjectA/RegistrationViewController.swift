@@ -20,7 +20,7 @@ func showMessage(_ msg : String, _ type : String, _ viewController : UIViewContr
     alertController.addAction(alertAction)
     viewController.present(alertController, animated: true, completion: nil)
 }
-
+//Registration - William
 class RegistrationViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!

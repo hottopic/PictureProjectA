@@ -17,7 +17,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
 
         // Do any additional setup after loading the view.
     }
-
+//Camera - William & Sean
     @IBAction func pickImageButton(_ sender: UIButton) {
         let imageViewController = UIImagePickerController()
         imageViewController.sourceType = .camera
