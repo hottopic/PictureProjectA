@@ -26,7 +26,7 @@ class TableImageViewController: UIViewController, UITableViewDelegate, UITableVi
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
         cell.nameLabel.text = "William"
-        cell.descriptionLabel.text = "test"
+        cell.descriptionLabel.text = "Test"
         return cell
     }
     

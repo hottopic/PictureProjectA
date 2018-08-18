@@ -11,16 +11,25 @@ import UIKit
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
 
+    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var pictureView: UIImageView!
+    @IBAction func browseButton(_ sender: UIButton) {
+    }
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var descTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //Messagebox
+        messageLabel.isHidden = true
+        
     }
-//Camera - William & Sean
+    //Camera - William & Sean
     @IBAction func pickImageButton(_ sender: UIButton) {
         let imageViewController = UIImagePickerController()
-        imageViewController.sourceType = .camera
+        imageViewController.sourceType = .photoLibrary
         imageViewController.delegate = self
         imageViewController.allowsEditing = false
         
@@ -35,5 +44,21 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func saveButton(_ sender: UIButton) {
+        let title = titleTextField.text!
+        let desc = descTextField.text!
+        let picture = pictureView.image!
+        
+        let photo = Photo(title,desc,picture)
+        
+        let data = NSKeyedArchiver.archivedData(withRootObject: photo)
+        
+        UserDefaults.standard.set(data, forKey: "photo")
+        messageLabel.isHidden = false
+        messageLabel.backgroundColor = UIColor.green
+        titleTextField.text = ""
+        descTextField.text = ""
+        
     }
 }
