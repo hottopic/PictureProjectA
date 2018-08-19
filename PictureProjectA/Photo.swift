@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+//class Photo
 class Photo : NSObject, NSCoding
 {
     var title : String

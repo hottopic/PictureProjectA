@@ -10,11 +10,10 @@ import UIKit
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
+    
+    var pics = [Photo]()
 
-    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var pictureView: UIImageView!
-    @IBAction func browseButton(_ sender: UIButton) {
-    }
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descTextField: UITextField!
     override func viewDidLoad() {
@@ -23,7 +22,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Do any additional setup after loading the view.
         
         //Messagebox
-        messageLabel.isHidden = true
+        //messageLabel.isHidden = true
         
     }
     //Camera - William & Sean
@@ -34,6 +33,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         imageViewController.allowsEditing = false
         
         present(imageViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func browseButton(_ sender: UIButton) {
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -51,14 +53,20 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let picture = pictureView.image!
         
         let photo = Photo(title,desc,picture)
+        pics.append(photo)
         
-        let data = NSKeyedArchiver.archivedData(withRootObject: photo)
+        let cdata = NSKeyedArchiver.archivedData(withRootObject: pics)
+        UserDefaults.standard.set(cdata, forKey: "data")
         
-        UserDefaults.standard.set(data, forKey: "photo")
-        messageLabel.isHidden = false
-        messageLabel.backgroundColor = UIColor.green
-        titleTextField.text = ""
-        descTextField.text = ""
+        //let data = NSKeyedArchiver.archivedData(withRootObject: photo)
         
+        //UserDefaults.standard.set(data, forKey: "photo")
+        //messageLabel.isHidden = false
+        //messageLabel.backgroundColor = UIColor.green
+        //titleTextField.text = ""
+        //descTextField.text = ""
+        
+    }
+    @IBAction func cameraButton(_ sender: Any) {
     }
 }

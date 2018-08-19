@@ -8,10 +8,15 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    var pics : [Photo]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let cdata  = UserDefaults.standard.object(forKey: "data") as! Data
+        pics = NSKeyedUnarchiver.unarchiveObject(with: cdata) as! [Photo]
 
         // Do any additional setup after loading the view.
     }
@@ -19,6 +24,45 @@ class HomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return pics.count
+        //return (pics.count)
+    }
+    
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        /*let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for : indexPath) as! CustomTableViewCell
+         
+         //let data = UserDefaults.standard.object(forKey: "photo") as! Data
+         
+         //let photo = NSKeyedUnarchiver.unarchiveObject(with: data) as! Photo
+         
+         
+         //cell.pictureView.image = UIImage(named: (pics[indexPath.row] + ".jpeg"))
+         cell.nameLabel.text = pics[indexPath.row].title
+         cell.pictureView.image = pics[indexPath.row].picture
+         
+         //cell.nameLabel.text = photo.title
+         //cell.pictureView.image = photo.picture
+         tableView.reloadData()
+         
+         return (cell)*/
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
+        //cell.modelLabel.text = pics[indexPath.row].model
+        //cell.priceLabel.text = String(pics[indexPath.row].price)
+        //cell.pictureView.image = pics[indexPath.row].picture
+        cell.nameLabel.text = pics[indexPath.row].title
+        
+        cell.pictureView.image = pics[indexPath.row].picture
+        //cell.nameLabel.text = String(pics[indexPath.row].title)
+        //cell.textLabel.text = String(pics[indexPath.row].description)
+        
+        return cell
     }
     
 
